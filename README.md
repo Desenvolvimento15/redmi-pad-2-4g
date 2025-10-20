@@ -1,0 +1,1 @@
+# redmi-pad-2-4g
