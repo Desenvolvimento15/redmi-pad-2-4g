@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $(".slick-end").slick({
+  $(".slick-mobile").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     dots: false,
