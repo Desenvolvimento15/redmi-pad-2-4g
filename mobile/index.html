@@ -206,7 +206,7 @@ tabindex="-1" aria-hidden="true" />
 
 <div class="div84">
 <div class="div85"><span data-key="overview_28" class="xm-text split_text1880 f-bold" data-type="text" data-id="gseta9phhs">19 horas</span></div>
-<div class="div86"><span data-key="overview_29" class="xm-text split_text1879 f-light" data-type="text" data-id="fzf8mhlq9v">reprodução de vídeo</span></div>
+<div class="div86"><span data-key="overview_29" class="xm-text split_text1879 f-light" data-type="text" data-id="fzf8mhlq9v">reprodução de<br> vídeo</span></div>
 </div>
 </div>
 
@@ -448,38 +448,6 @@ tabindex="-1" aria-hidden="true" />
 </main>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="./main.js"></script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const lazyImages = document.querySelectorAll("img[src]");
-
-        // Função que carrega a imagem substituindo src por src
-        const loadImage = (img) => {
-            const src = img.getAttribute("src");
-            if (!src) return;
-            img.src = src;
-            img.removeAttribute("src");
-        };
-
-        // Se o navegador suporta IntersectionObserver (modo eficiente)
-        if ("IntersectionObserver" in window) {
-            const observer = new IntersectionObserver((entries, obs) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        loadImage(entry.target);
-                        obs.unobserve(entry.target);
-                    }
-                });
-            });
-
-            lazyImages.forEach(img => observer.observe(img));
-        }
-        // Caso não suporte (modo simples, carrega tudo)
-        else {
-            lazyImages.forEach(img => loadImage(img));
-        }
-    });
-</script>
 
 
 </body>

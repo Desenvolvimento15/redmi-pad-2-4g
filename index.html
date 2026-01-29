@@ -8,7 +8,6 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 <link rel="stylesheet" href="https://i02.appmifile.com/i18n/fonts/MiSansLatin/index.css" />
-<link href="https://s05.appmifile.com/sgp/spps_files/product/2.46.0/pc_v4/redmi-pad-2-4g/css/public.chunk.css" rel="stylesheet">
 <link href="./main.css" rel="stylesheet">
 
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
@@ -468,37 +467,6 @@ tabindex="-1" aria-hidden="true" />
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="./mobile/main.js"></script>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const lazyImages = document.querySelectorAll("img[src]");
-
-        // Função que carrega a imagem substituindo src por src
-        const loadImage = (img) => {
-            const src = img.getAttribute("src");
-            if (!src) return;
-            img.src = src;
-            img.removeAttribute("src");
-        };
-
-        // Se o navegador suporta IntersectionObserver (modo eficiente)
-        if ("IntersectionObserver" in window) {
-            const observer = new IntersectionObserver((entries, obs) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        loadImage(entry.target);
-                        obs.unobserve(entry.target);
-                    }
-                });
-            });
-
-            lazyImages.forEach(img => observer.observe(img));
-        }
-        // Caso não suporte (modo simples, carrega tudo)
-        else {
-            lazyImages.forEach(img => loadImage(img));
-        }
-    });
-</script>
 
 </body>
 </html>
